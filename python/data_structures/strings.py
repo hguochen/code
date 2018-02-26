@@ -60,3 +60,70 @@ print string.zfill('453', 8)
 
 # replace all occurences of old with new
 print string.replace('hello old', 'old', 'new')
+
+print "testing".capitalize()
+
+# fill left and right of string with characters in argument. the width given must be longer than the string length itself
+print "testing".center(11, 'b')
+
+# count the number of substrings in string
+print "hello world hello".count("hello")
+
+# check that the string ends with the suffix string
+print "testing".endswith("ing")
+
+# return the lowest index in the string where substring is found. return -1 if not found
+print "testing".find("ing")
+
+# same as find, but raise ValueError when substring is not found
+print "testing".index("ing")
+
+# return true if all chars are alphanumeric, false otherwise
+print "testing123".isalnum()
+
+print "testing".isalpha()
+
+print "1235".isdigit()
+
+print "carrot".islower()
+
+print " ".isspace()
+
+# return true if each word is capitalized in the string. false otherwise.
+print "This Is A Title".istitle()
+
+print "HELLO".isupper()
+
+print "---".join(['apple', 'pear', 'grape'])
+
+print "hello".ljust(10, 'X')
+
+print "hello".rjust(10, 'X')
+
+print "HELLO".lower()
+
+print "    spacious   ".lstrip()
+print "    spacious   ".rstrip()
+
+print "hello world gary".partition('world')
+
+print "hello world gary gary".rpartition("gary")
+
+print "hello world".replace("world", "gary")
+
+print "hello world gary".rfind("gary")
+
+print "hello world gary".rindex("gary")
+
+print 'hello world hello world hello world'.rsplit()
+print 'hello world hello world hello world'.split()
+
+print 'hello\n world\n this is\n wonderful\n'.splitlines()
+
+print "ThIs Is Cool".swapcase()
+
+print "The awakening begins".title()
+
+print "hello world".upper()
+
+print "4362".zfill(10)
