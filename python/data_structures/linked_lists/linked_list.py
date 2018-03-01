@@ -54,13 +54,15 @@ class LinkedList(object):
             curr = curr.next
         return
 
-
+    def get_head(self):
+        return self.head
         
     def print_list(self):
         curr = self.head
         while curr is not None:
             print curr.value,
             curr = curr.next
+        print ""
         return
 
     def find(self, value):
