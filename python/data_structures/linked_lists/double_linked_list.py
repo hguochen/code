@@ -15,7 +15,13 @@ class DoubleLinkedList(object):
     def __init__(self, value):
         self.head = Node(value)
 
+    def get_head(self):
+        return self.head
+
     def insert_front(self, value):
+        """
+        Time: O(1)
+        """
         node = Node(value)
         node.next = self.head
         self.head.prev = node
@@ -23,6 +29,9 @@ class DoubleLinkedList(object):
         return
 
     def insert_back(self, value):
+        """
+        Time: O(n)
+        """
         node = Node(value)
         if self.head is None:
             self.head = node
@@ -35,6 +44,9 @@ class DoubleLinkedList(object):
         return
 
     def delete(self, value):
+        """
+        Time: O(n)
+        """
         if self.head is None:
             return
         prev = None
