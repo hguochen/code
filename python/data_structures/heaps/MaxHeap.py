@@ -4,10 +4,7 @@ Implementation of max heap data structure.
 
 class MaxHeap(object):
     def __init__(self, heap=[]):
-        heap.insert(0, None)
         self.heap = heap
-        if len(self.heap) > 1:
-            self.build_max_heap()
 
     def find_max(self):
         return self.heap[1]
@@ -23,7 +20,7 @@ class MaxHeap(object):
         return
 
     def __parent(self, index):
-        return index / 2
+        return index-1 / 2
 
     def __left(self, index):
         return 2 * index
