@@ -84,9 +84,22 @@ class RedBlackTree(object):
         return Node(value, color, self.nil, self.nil, self.nil)
 
     def search(self, value):
-        pass
+        if self.root == self.nil:
+            return
+        return self.__search_node(self.root, value)
+
+    def __search_node(self, node, value):
+        if node is self.nil:
+            return
+        if value == node.value:
+            return node
+        elif value < node.value:
+            return self.__search_node(node.left, value)
+        else:
+            return self.__search_node(node.right, value)
 
     def delete(self, value):
+        # TODO
         pass
 
     def __left_rotate(self, node):
@@ -135,17 +148,52 @@ class RedBlackTree(object):
         return
 
     def preorder(self, node):
-        pass
+        if node is self.nil:
+            return
+        print node.value, node.color,
+        self.preorder(node.left)
+        self.preorder(node.right)
 
     def inorder(self, node):
-        pass
+        if node is self.nil:
+            return
+        self.inorder(node.left)
+        print node.value, node.color,
+        self.inorder(node.right)
 
-    def postorder(self node):
-        pass
+    def postorder(self, node):
+        if node is self.nil:
+            return
+        self.postorder(node.left)
+        self.postorder(node.right)
+        print node.value, node.color,
 
-    def __left_rotate(self, node):
-        pass
+    def levelorder(self, node):
+        queue = [node]
 
+        while len(queue) > 0:
+            curr = queue.pop(0)
+            print curr.value, curr.color,
+            if curr.left is not self.nil:
+                queue.append(curr.left)
+            if curr.right is not self.nil:
+                queue.append(curr.right)
+        print ""
+        return
+
+    def get_root(self):
+        return self.root
 
 if __name__ == '__main__':
-    pass
+    tree = RedBlackTree(13)
+    tree.insert(8)
+    tree.insert(17)
+    tree.insert(1)
+    tree.insert(11)
+    tree.insert(15)
+    tree.insert(25)
+    tree.insert(6)
+    tree.insert(22)
+    tree.insert(27)
+    root = tree.get_root()
+    tree.levelorder(root)
