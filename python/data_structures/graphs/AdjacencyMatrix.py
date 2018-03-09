@@ -14,6 +14,9 @@ class AdjacencyMatrix(object):
         for vertice in connected_vertices:
             self.graph[vertice_index][vertice] = 1
 
+    def get_graph(self):
+        return self.graph
+
     def print_graph(self):
         for row in self.graph:
             print row

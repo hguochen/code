@@ -16,6 +16,9 @@ class AdjacencyList(object):
             self.graph[vertice_index].insert_back(vertice)
         return
 
+    def get_graph(self):
+        return self.graph
+
     def print_graph(self):
         for vertice in self.graph:
             vertice.print_list()
