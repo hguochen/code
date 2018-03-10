@@ -1,6 +1,7 @@
 """
 Implementation of breadth first search algorithm.
-
+Time: O(V + E) where V is the number of vertices, E is the number of edges
+Space: O(V)
 """
 from collections import deque
 from AdjacencyList import AdjacencyList
