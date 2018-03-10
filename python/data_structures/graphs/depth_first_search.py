@@ -1,5 +1,8 @@
 """
 Implementation of depth first search algorithm
+
+Time: O(V + E) where V is number of vertices, E is number of edges
+Space: O(V)
 """
 
 from AdjacencyList import AdjacencyList
