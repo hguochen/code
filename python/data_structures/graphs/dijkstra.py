@@ -6,6 +6,10 @@ import sys
 from linked_lists.linked_list import LinkedList
 
 def dijkstra(graph, start):
+    """
+    Time: O(V^2) where V is number of vertices, E is number of edges
+    with a min priority queue implementation, Time: O(VlgV + E)
+    """
     visited, dist, parent = {}, {}, {}
     for key in graph.keys():
         visited[key] = False
@@ -22,6 +26,7 @@ def dijkstra(graph, start):
                 dist[edge[0]] = edge[1] + dist[index]
                 parent[edge[0]] = index
         # get the next smallest distance in which its node is not visited
+        # NOTE: this part can be optimized with a min priority queue
         smallest_dist = sys.maxint
         for key, value in dist.iteritems():
             if not visited[key] and value < smallest_dist:
