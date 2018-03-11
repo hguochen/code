@@ -41,5 +41,9 @@ def insertion_sort_2(array):
 
 if __name__ == "__main__":
     arr1 = [4,3,2,10,12,1,5,6]
+    arr2 = [64, 25, 12, 22, 11]
     print insertion_sort(arr1)
     print insertion_sort_2(arr1)
+
+    print insertion_sort(arr2)
+    print insertion_sort_2(arr2)
