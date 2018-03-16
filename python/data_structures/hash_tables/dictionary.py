@@ -63,3 +63,6 @@ print 'height' in stuff
 knights = {'gallahad': 'the pure', 'robin': 'the brave'}
 for k, v in knights.iteritems():
     print k, v
+
+# check number of items in dictionary
+len(knights)
