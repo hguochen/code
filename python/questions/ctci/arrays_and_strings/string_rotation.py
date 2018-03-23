@@ -7,13 +7,17 @@ s1 using only one call to isSubstring(eg. "waterbottle" is a rotation of "erbott
 import unittest
 
 def string_rotation(s1, s2):
-    if not s1 or not s2:
+    """
+    Time: O(n) where n is the size of s2 string
+    Space: O(1)
+    """
+    if len(s1) != len(s2) or not s1 or not s2:
         return False
     temp = s2 + s2
     return is_substring(s1, temp)
 
 def is_substring(s1, s2):
-    return s1 in s2
+    return s2.find(s1) != -1
 
 class Test(unittest.TestCase):
     data = [
@@ -25,9 +29,6 @@ class Test(unittest.TestCase):
     def test_string_rotation(self):
         for [test_string1, test_string2, expected] in self.data:
             actual = string_rotation(test_string1, test_string2)
-            print test_string1
-            print test_string2
-            print actual
             self.assertEqual(actual, expected)
         
 if __name__ =="__main__":
