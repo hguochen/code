@@ -195,7 +195,14 @@ def is_palindrome_recur(head, length):
     return [node, result]
     
 def list_length(head):
-    pass
+    if not head:
+        return 0
+    curr = head
+    size = 0
+    while curr is not None:
+        size += 1
+        curr = curr.next
+    return size
 
 if __name__ == '__main__':
     l_list1 = LinkedList(1)
