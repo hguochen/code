@@ -41,9 +41,10 @@ def intervals_overlap(schedule):
     """
     Sort the schedule in ascending order of start time.
     Compare each set of 2 schedule for overlaps
-    Time: O(n)
+    Time: O(nlgn)
     Space: O(1)
     where n is the number of schedules
+    Time O(nlgn) comes from sorting the schedules
     """
     if not schedule:
         return None
