@@ -7,8 +7,8 @@ import copy
 
 def power_set(arr):
     """
-    Time: O(2^n)
-    Space: O(2^n)
+    Time: O(n2^n)
+    Space: O(n2^n)
     where n is the size of the arr
     """
     result = []
@@ -32,8 +32,8 @@ def power_set(arr):
 def power_set_iterative(arr):
     """
     each power set is built up from the smaller subset
-    Time: O(2^n)
-    Space: O(2^n)
+    Time: O(n2^n)
+    Space: O(n2^n)
     """
     result = [[]]
     if not arr:
@@ -47,8 +47,8 @@ def power_set_iterative(arr):
 
 def power_set_recursive(arr):
     """
-    Time: O(2^n)
-    Space: O(2^n)
+    Time: O(n2^n)
+    Space: O(n2^n)
     """
     result = [[]]
     if not arr:
