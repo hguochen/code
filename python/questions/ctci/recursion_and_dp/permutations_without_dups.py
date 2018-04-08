@@ -68,8 +68,33 @@ def perm_util3(string, start, end, result):
         perm_util3(string, start+1, end, result)
         string[i], string[start] = string[start], string[i]
 
+def permutations_build_from_base(string):
+    if len(string) < 1:
+        return []
+    result = []
+    for i in xrange(len(string)):
+        result = generate_permutations(string[i], result)
+    return result
+
+def generate_permutations(char, result):
+    if len(result) < 1:
+        result.append(char)
+        return result
+    temp_res = []
+    for res in result:
+        temp = []
+        for i in xrange(0, len(res)):
+            new_char = res[:i] + char + res[i:]
+            temp.append(new_char)
+        # put char at last index
+        temp.append(res + char)
+        temp_res.extend(temp)
+    result = copy.deepcopy(temp_res)
+    return result
+
 if __name__ == '__main__':
     string1 = "abc"
     print permutations_without_dups(string1)
     print permutations_without_dups2(string1)
     print permuations_backtracking(string1)
+    print permutations_build_from_base("abc")
