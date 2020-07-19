@@ -1,10 +1,12 @@
+package com.hguochen.java.libraries;
+
 import java.util.*;
 import java.util.stream.*;
 
 class Person {
-    private String name;
+    private final String name;
 
-    private List<Person> friends = new ArrayList<>();
+    private final List<Person> friends = new ArrayList<>();
 
     Person(String newName) {
         this.name = newName;
@@ -26,7 +28,7 @@ class Person {
         System.out.println(this.friends);
     }
 }
-public class Stream {
+public class StreamDemo {
     public static void main(String []args) {
         // Demonstrate use of Stream flatMap
         // set up
@@ -54,10 +56,10 @@ public class Stream {
         List<List<Person>> familyFriends = family.stream().map(member -> member.getFriends()).collect(Collectors.toList());
         System.out.println(familyFriends);
         System.out.println(
-            familyFriends.stream().flatMap(Collection::stream).collect(Collectors.toList())
-            );
+                familyFriends.stream().flatMap(Collection::stream).collect(Collectors.toList())
+        );
         System.out.println(
-            family.stream().map(member -> member.getFriends()).flatMap(Collection::stream).collect(Collectors.toList())
-            );
+                family.stream().map(member -> member.getFriends()).flatMap(Collection::stream).collect(Collectors.toList())
+        );
     }
 }
