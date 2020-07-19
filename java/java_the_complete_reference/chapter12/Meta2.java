@@ -3,7 +3,7 @@ import java.lang.annotation.*;
 import java.lang.reflect.*;
 
 @Retention(RetentionPolicy.RUNTIME)
-@interface MyAnno {
+@interface MyAnnotation {
     String str();
     int val();
 }
