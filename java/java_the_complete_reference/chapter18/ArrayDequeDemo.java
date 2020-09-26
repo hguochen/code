@@ -10,6 +10,7 @@ class ArrayDequeDemo {
         adq.push("E");
         adq.push("F");
 
+        System.out.println(adq);
         System.out.println("Popping the stack: ");
         while(adq.peek() != null) {
             System.out.print(adq.pop() + " ");

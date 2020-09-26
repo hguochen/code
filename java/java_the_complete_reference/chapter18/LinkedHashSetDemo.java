@@ -1,8 +1,8 @@
 import java.util.*;
 
-class HashSetDemo {
+class LinkedHashSetDemo {
     public static void main(String[] args) {
-        HashSet<String> hs = new HashSet<String>();
+        LinkedHashSet<String> hs = new LinkedHashSet<String>();
 
         // add elements to hashset
         hs.add("Beta");
@@ -14,13 +14,5 @@ class HashSetDemo {
         hs.add("Omega");
 
         System.out.println(hs);
-
-        ArrayList<String> al = new ArrayList<String>();
-        al.add("Apple");
-        al.add("Pear");
-        al.add("Guava");
-        HashSet<String> hs2 = new HashSet<String>(al);
-
-        System.out.println(hs2);
     }
 }
